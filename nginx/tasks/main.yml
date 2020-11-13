@@ -1,16 +1,16 @@
 ---
-- name: Add epel-release repo
+- name: install epel-release
   dnf:
     name: epel-release
     state: present
         
-- name: disable ssl for repo epel
+- name: turn off ssl for repo epel
   lineinfile: 
     dest: /etc/yum.repos.d/epel.repo
     insertafter: 'enabled=1' 
     line: 'sslverify=0'
 
-- name: Install a list of packages
+- name: additional packages
   dnf:
     name:
       - nginx
@@ -23,7 +23,7 @@
       - net-tools
     state: present
         
-- name: Put SELinux in permissive mode, logging actions that would be blocked.
+- name: Set SELinux to permissive mode
   selinux:
     policy: targeted
     state: permissive
@@ -34,7 +34,7 @@
     value: 'false'
         
 - git:
-    repo: 'https://github.com/staybox/django-helloworld'
+    repo: 'https://github.com/Rafael-99-spec/django-helloworld'
     dest: '/root/django-helloworld'
     force: yes
 
@@ -51,13 +51,13 @@
     app_path: '/root/django-helloworld'
   
 - git:
-    repo: 'https://github.com/staybox/go-http-hello-world.git'
+    repo: 'https://github.com/Rafael-99-spec/go-http-hello-world'
     dest: '/root/go-http-hello-world'
     force: yes
   
-- name: copy exe
+- name: copy
   get_url: 
-    url: 'https://raw.githubusercontent.com/staybox/go-http-hello-world/master/hello_world/hello_world'
+    url: 'https://raw.githubusercontent.com/Rafael-99-spec/go-http-hello-world/master/hello_world/hello_world'
     validate_certs: no
     dest: '/root/go-http-hello-world/hello_world/hello_world'
     owner: root

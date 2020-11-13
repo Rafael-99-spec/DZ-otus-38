@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
     end
 
 	web.vm.provision "ansible" do |ansible|
-        ansible.playbook = "web.yml"
+        ansible.playbook = "webserver.yml"
 	end
 	
   end
