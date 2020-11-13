@@ -16,9 +16,9 @@ nginx + java (tomcat/jetty/netty) + go + ruby
 ## Практическая часть
 
 Настроен Vagrantfile и плейбук ansible для развертки следующей конфигурации:
-- проект https://github.com/Rafael-99-spec/django-helloworld висит на порту localhost:8000 и проксирутся nginx с порта 83
-- проект https://github.com/Rafael-99-spec/go-http-hello-world висит на порту localhost:8800 и проксирутся nginx с порта 81
-- проект https://github.com/Rafael-99-spec/react-helloworld висит на порту localhost:7777 и проксирутся nginx с порта 82
+1) проект https://github.com/Rafael-99-spec/django-helloworld висит на порту localhost:8000 и проксирутся nginx с порта 83
+2) проект https://github.com/Rafael-99-spec/go-http-hello-world висит на порту localhost:8800 и проксирутся nginx с порта 81
+3) проект https://github.com/Rafael-99-spec/react-helloworld висит на порту localhost:7777 и проксирутся nginx с порта 82
 
 
 - Для развертывания стенда необходимо скачать репозиторий на локальное хранилищье, войти в директорию с Vagrantfile и запустить стенд - ```vagrant up```.
