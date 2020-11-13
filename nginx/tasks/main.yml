@@ -65,7 +65,7 @@
     mode: '0755'
         
 - git:
-    repo: 'https://github.com/staybox/react-helloworld'
+    repo: 'https://github.com/Rafael-99-spec/react-helloworld'
     dest: '/root/react-helloworld'
     force: yes
   notify:
